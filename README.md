@@ -114,3 +114,101 @@ System.out.println(name);
 
 - **JavaScript** is a dynamically typed, prototype-based, and flexible language.
 - **Java** is a statically typed, class-based, and strongly structured language.
+
+
+## JavaScript Console
+
+The **JavaScript Console** works similarly to the `eval()` function. The last expression entered in the console is evaluated and its result is returned.
+
+### Example
+
+```javascript
+console.log(eval("3 + 5"));
+```
+
+**Output:**
+
+```javascript
+8
+```
+
+---
+
+## Multi-line Input in the Console
+
+By default, pressing **Enter** executes the code immediately.
+
+### Ways to write multiple lines:
+
+- If the code is incomplete (for example, `function foo() {`), the console automatically moves to the next line.
+- Press **Shift + Enter** to insert a new line without executing the code.
+- In Firefox, you can enable multi-line editor mode.
+
+---
+
+## Example Program
+
+Copy and paste the following code into the browser console:
+
+```javascript
+(function () {
+  "use strict";
+
+  /* Start of your code */
+  function greetMe(yourName) {
+    alert(`Hello ${yourName}`);
+  }
+
+  greetMe("World");
+
+  /* End of your code */
+})();
+```
+
+After pressing **Enter**, the browser displays:
+
+```text
+Hello World
+```
+
+---
+
+## What is IIFE?
+
+**IIFE (Immediately Invoked Function Expression)** is a function that runs immediately after it is created.
+
+```javascript
+(function () {
+  console.log("Hello");
+})();
+```
+
+### Benefits of IIFE
+
+- Prevents variables from affecting other code.
+- Avoids conflicts between code snippets.
+- Creates a separate scope.
+
+---
+
+## What is Strict Mode?
+
+```javascript
+"use strict";
+```
+
+Strict mode helps:
+
+- Prevent common JavaScript mistakes.
+- Improve code quality.
+- Catch errors early.
+- Make code more secure.
+
+---
+
+## Why use IIFE and Strict Mode?
+
+- Prevent beginner mistakes.
+- Keep variables private.
+- Avoid conflicts between console executions.
+- Write cleaner and safer JavaScript code.
