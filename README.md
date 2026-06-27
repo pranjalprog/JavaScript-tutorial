@@ -14,7 +14,7 @@ HTML gives structure, CSS gives design, and JavaScript adds behavior.
 7. **Supports asynchronous programming** – Can perform multiple tasks simultaneously without waiting for one task to finish (using callbacks, promises, and `async/await`).
 
 
----Area Of Use---
+**---Area Of Use---**
 
 Web Development	  - Interactive websites
 Frontend	      - Buttons, forms, animations
@@ -22,13 +22,13 @@ Backend	          - Server-side programming
 APIs	          - Fetching data from servers
 
 
-Real-Life Examples - Netflix web application ,  Facebook website
+**Real-Life Examples** - Netflix web application ,  Facebook website
 
-Advantages
+**Advantages**
 Easy to learn.
 Fast execution in browsers.
 
-Disadvantagesgit status
+**Disadvantagesgit status**
 Large applications can become complex without proper structure.
 
 
