@@ -29,3 +29,45 @@ console.log(value)
     let stringNumber = String(somenumber)
     console.log(stringNumber)
     console.log(typeof(stringNumber))
+
+    //-------------------------------------OPERATION -----------------------------------------------------------------------------------------------
+    let valueu = 3 
+    let negValue = -valueu;
+    console.log(negValue);
+
+    console.log(2+2);
+     console.log(2*2);
+      console.log(2-2);
+       console.log(2**2);
+        console.log(2/2);
+         console.log(2%2);
+
+   let str1 = "hello"
+   let str2 = " hitesh"
+   let str3 = str1 + str2
+   console.log (str3);
+  
+
+    console.log(2+"2");
+     console.log("2"+2);
+      console.log(1+2+"2"); // 32 - agar string 1st mai hai toh sab string convert honge 
+       console.log("1"+2+2); // 122  - lekin agar last mai string hai toh fir 1st string mai convert ho jayenge
+        
+
+        console.log(true);
+        console.log(+true);
+         console.log(+"");
+
+         let num1,  nums2, nums3
+
+         nums1 = nums2 = nums3 = 2+2
+
+         let gamecounter = 100
+         ++gamecounter;
+         console.log(gamecounter); 
+
+         //prefix and postfix concept
+    
+    
+
+
