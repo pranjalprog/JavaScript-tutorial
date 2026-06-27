@@ -67,6 +67,51 @@ console.log(value)
          console.log(gamecounter); 
 
          //prefix and postfix concept
+
+         /*
+         Maan lo tumhare paas ₹100 hain.
+
+Prefix (++money)
+
+Pehle paise badhenge, phir value milegi.
+
+let money = 100;
+
+console.log(++money);
+
+Steps:
+
+Money 100 → 101 ho gaya.
+Phir 101 print hua.
+
+Output:
+
+101
+Postfix (money++)
+
+Pehle current value milegi, phir value badhegi.
+
+let money = 100;
+
+console.log(money++);
+
+Steps:
+
+Pehle 100 print hua.
+Uske baad money 101 ho gaya.
+
+Output:
+
+100
+
+Agar baad mein check karoge:
+
+console.log(money);
+
+Output:
+
+101
+*/
     
     
 
