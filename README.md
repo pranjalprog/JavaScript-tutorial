@@ -365,6 +365,64 @@ let name = "John";
 console.log(window.name);      // Browser
 console.log(globalThis.name);  // All environments
 ```
+| Declaration | Global Scope | `window` Property |
+| ----------- | ------------ | ----------------- |
+| `var`       | Yes          | Yes               |
+| `let`       | Yes          | No                |
+| `const`     | Yes          | No                |
+
+> `globalThis` is the standard way to access the global object in all JavaScript environments.
+
+```javascript
+console.log(globalThis);
+```
+
+---
+
+# JavaScript Environment
+
+An **environment** is the platform where JavaScript code runs.
+
+JavaScript itself is only a programming language. It requires an environment to execute the code and provide additional features.
+
+### Browser Environment
+
+- Runs inside web browsers.
+- Global object: `window`
+- Provides browser APIs such as:
+  - `document`
+  - `alert()`
+  - `localStorage`
+
+```javascript
+alert("Hello");
+console.log(document.title);
+```
+
+### Node.js Environment
+
+- Runs JavaScript outside the browser.
+- Global object: `global`
+- Provides server-side APIs.
+
+```javascript
+console.log(__dirname);
+```
+
+### `globalThis`
+
+`globalThis` is a standard object that works in all JavaScript environments.
+
+```javascript
+console.log(globalThis);
+```
+
+- Browser → `globalThis === window`
+- Node.js → `globalThis === global`
+
+### Summary
+
+An environment is the platform where JavaScript code executes and provides additional objects and APIs to the language.
 
 ---
 
