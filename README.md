@@ -78,29 +78,39 @@ User login kare aur server database se password verify kare, to ye server-side J
 ---
 
 ## JAVA v/s JAVASCRIPT 
-1. Typing System
+## JavaScript vs Java
 
-JavaScript: Dynamic typing होती है। Variable का type बताने की जरूरत नहीं होती।
+| Feature | JavaScript | Java |
+|---------|------------|------|
+| **Typing System** | Dynamic typing (type declare karne ki zarurat nahi hoti) | Static typing (type pehle se declare karna padta hai) |
+| **Example** | `let x = 10; x = "Hello";` | `int x = 10;`<br>`String name = "Hello";` |
+| **Object Model** | Prototype-based language | Class-based language |
+| **Variable Declaration** | Variables aur functions ko strictly define karne ki zarurat nahi | Variables aur methods ko declare karna padta hai |
+| **Access Modifiers** | `public`, `private`, `protected` ka kam use | Access modifiers ka use karna padta hai |
+| **Complexity** | Easy aur beginner-friendly | Thoda complex aur strict |
+| **Inheritance** | Prototype inheritance | Class inheritance |
+| **Syntax** | Simple aur flexible | Strict aur structured |
+| **Use** | Web development aur scripting | Enterprise applications, Android apps |
 
+### JavaScript Example
+
+```javascript
 let x = 10;
 x = "Hello";
 
-यहां x पहले number था, बाद में string बन गया।
+console.log(x); // Hello
+```
 
-Java: Static typing होती है। Variable का type पहले से बताना पड़ता है।
+### Java Example
 
+```java
 int x = 10;
 String name = "Hello";
-2. Object Model
-JavaScript: Prototype-based language है। Objects दूसरे objects से properties inherit करते हैं।
-Java: Class-based language है। पहले class बनती है, फिर उसके objects बनते हैं।
-3. Variable Declaration
-JavaScript: Variables, methods, और return types को strictly define करने की जरूरत नहीं।
-Java: सब कुछ declare करना पड़ता है।
-4. Access Modifiers
-JavaScript: public, private, protected की ज्यादा चिंता नहीं।
-Java: Access modifiers का उपयोग करना पड़ता है।
-5. Complexity
-Java: ज्यादा rules और syntax होने की वजह से थोड़ा complex है।
-JavaScript: आसान syntax की वजह से beginners के लिए सरल है।
 
+System.out.println(name);
+```
+
+### Conclusion
+
+- **JavaScript** is a dynamically typed, prototype-based, and flexible language.
+- **Java** is a statically typed, class-based, and strongly structured language.
