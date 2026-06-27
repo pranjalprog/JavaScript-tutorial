@@ -265,3 +265,294 @@ greet();
 ```
 
 Here, `message` is a **local variable** and cannot be accessed outside the function.
+
+---
+
+## Variable Hoisting
+
+**Variable Hoisting** means that variable declarations are moved to the top of their scope before code execution.
+
+### Hoisting with `var`
+
+```javascript
+console.log(x); // undefined
+var x = 10;
+```
+
+JavaScript internally treats it as:
+
+```javascript
+var x;
+console.log(x); // undefined
+x = 10;
+```
+
+- The declaration (`var x`) is hoisted.
+- The value assignment (`= 10`) is not hoisted.
+
+---
+
+### Hoisting with `let`
+
+```javascript
+console.log(y); // ReferenceError
+let y = 20;
+```
+
+`let` variables are hoisted but remain in the **Temporal Dead Zone (TDZ)** until the declaration is reached.
+
+---
+
+### Hoisting with `const`
+
+```javascript
+console.log(z); // ReferenceError
+const z = 30;
+```
+
+Like `let`, `const` is also in the **Temporal Dead Zone**.
+
+---
+
+### Function Hoisting
+
+Function declarations are completely hoisted.
+
+```javascript
+greet();
+
+function greet() {
+    console.log("Hello");
+}
+```
+
+**Output:**
+
+```text
+Hello
+```
+
+---
+
+## Summary
+
+| Keyword | Hoisted | Accessible Before Declaration |
+|---------|----------|------------------------------|
+| `var` | Yes | Yes (`undefined`) |
+| `let` | Yes | No (`ReferenceError`) |
+| `const` | Yes | No (`ReferenceError`) |
+| Function | Yes | Yes |
+
+---
+
+### Important Points
+
+- `var` is hoisted and initialized with `undefined`.
+- `let` and `const` remain in the **Temporal Dead Zone (TDZ)**.
+- Function declarations are fully hoisted.
+- It is considered good practice to declare variables before using them.
+
+---
+# Global Variables
+
+- Global variables are properties of the global object.
+- In browsers, the global object is `window`.
+- In all JavaScript environments, `globalThis` can be used.
+
+```javascript
+let name = "John";
+
+console.log(window.name);      // Browser
+console.log(globalThis.name);  // All environments
+```
+
+---
+
+# Constants (`const`)
+
+- `const` creates a read-only variable.
+- A constant must be initialized during declaration.
+- Reassignment is not allowed.
+
+```javascript
+const PI = 3.14;
+```
+
+❌ Invalid:
+
+```javascript
+const x; // SyntaxError
+```
+
+### Object Mutation
+
+```javascript
+const user = {
+    name: "John"
+};
+
+user.name = "David"; // Allowed
+```
+
+### Array Mutation
+
+```javascript
+const skills = ["HTML", "CSS"];
+
+skills.push("JavaScript");
+
+console.log(skills);
+```
+
+---
+
+# JavaScript Data Types
+
+JavaScript has **8 data types**.
+
+### Primitive Data Types
+
+1. `String`
+2. `Number`
+3. `Boolean`
+4. `undefined`
+5. `null`
+6. `BigInt`
+7. `Symbol`
+
+### Non-Primitive
+
+8. `Object`
+
+```javascript
+let name = "John";       // String
+let age = 20;            // Number
+let isLogin = true;      // Boolean
+let x;                   // undefined
+let y = null;            // null
+let big = 123n;          // BigInt
+```
+
+---
+
+# Dynamic Typing
+
+JavaScript is a dynamically typed language.
+
+```javascript
+let answer = 42;
+
+answer = "Hello";
+```
+
+The same variable can store different data types.
+
+---
+
+# Type Conversion
+
+```javascript
+"37" - 7;   // 30
+"37" * 7;   // 259
+```
+
+### Convert String to Number
+
+```javascript
+Number("10");       // 10
+parseInt("101", 2); // 5
+parseFloat("3.14"); // 3.14
+```
+
+---
+
+# Literals
+
+Literals are fixed values written directly in code.
+
+## Array Literal
+
+```javascript
+const fruits = ["Apple", "Mango", "Orange"];
+```
+
+## Object Literal
+
+```javascript
+const user = {
+    name: "John",
+    age: 20
+};
+```
+
+## Boolean Literal
+
+```javascript
+true
+false
+```
+
+## Numeric Literal
+
+```javascript
+10
+3.14
+0b1010
+0xFF
+```
+
+## RegExp Literal
+
+```javascript
+const re = /ab+c/;
+```
+
+---
+
+# String Literals
+
+```javascript
+"Hello"
+'JavaScript'
+```
+
+### Template Literals
+
+```javascript
+const name = "John";
+
+console.log(`Hello ${name}`);
+```
+
+Output:
+
+```text
+Hello John
+```
+
+---
+
+# Escape Characters
+
+| Character | Meaning |
+|----------|----------|
+| `\n` | New Line |
+| `\t` | Tab |
+| `\"` | Double Quote |
+| `\'` | Single Quote |
+| `\\` | Backslash |
+
+```javascript
+console.log("Hello\nWorld");
+```
+
+Output:
+
+```text
+Hello
+World
+```
+
+
+
+
