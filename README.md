@@ -146,33 +146,6 @@ By default, pressing **Enter** executes the code immediately.
 
 ---
 
-## Example Program
-
-Copy and paste the following code into the browser console:
-
-```javascript
-(function () {
-  "use strict";
-
-  /* Start of your code */
-  function greetMe(yourName) {
-    alert(`Hello ${yourName}`);
-  }
-
-  greetMe("World");
-
-  /* End of your code */
-})();
-```
-
-After pressing **Enter**, the browser displays:
-
-```text
-Hello World
-```
-
----
-
 ## What is IIFE?
 
 **IIFE (Immediately Invoked Function Expression)** is a function that runs immediately after it is created.
@@ -206,9 +179,89 @@ Strict mode helps:
 
 ---
 
-## Why use IIFE and Strict Mode?
+## Global Variables
 
-- Prevent beginner mistakes.
-- Keep variables private.
-- Avoid conflicts between console executions.
-- Write cleaner and safer JavaScript code.
+A variable declared outside any function is called a **Global Variable**. It can be accessed from anywhere in the program.
+
+### Example
+
+```javascript
+let message = "Hello World"; // Global variable
+
+function greet() {
+    console.log(message);
+}
+
+greet();
+console.log(message);
+```
+
+**Output:**
+
+```text
+Hello World
+Hello World
+```
+
+---
+
+### Characteristics of Global Variables
+
+- Declared outside any function or block.
+- Accessible throughout the entire program.
+- Remain in memory until the program ends.
+- Can be accessed by all functions.
+
+---
+
+### Example with `var`
+
+```javascript
+var name = "John";
+
+function showName() {
+    console.log(name);
+}
+
+showName();
+```
+
+---
+
+### Example with `let`
+
+```javascript
+let age = 20;
+
+function displayAge() {
+    console.log(age);
+}
+
+displayAge();
+```
+
+---
+
+### Disadvantages of Global Variables
+
+- Can be modified from anywhere.
+- May cause naming conflicts.
+- Makes large applications difficult to maintain.
+- Increases the chances of bugs.
+
+---
+
+### Best Practice
+
+Use global variables only when the value needs to be shared throughout the application. Otherwise, prefer local variables.
+
+```javascript
+function greet() {
+    let message = "Hello";
+    console.log(message);
+}
+
+greet();
+```
+
+Here, `message` is a **local variable** and cannot be accessed outside the function.
