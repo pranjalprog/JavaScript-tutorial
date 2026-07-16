@@ -62,6 +62,9 @@ copy
  └── address → { city: "Delhi" }
 */ 
 
+
+
+/*
 const myHeros = ["pranjal" , " aman"]
 
 const myArr = new Array(1,2,3,4,5)
@@ -95,7 +98,7 @@ console.log("B" , myArr)
 const myn2 = myArr.slice(1 , 3)
 console.log(myn2);
  
-
+*/
 
 
 
@@ -202,3 +205,59 @@ const arr4 = [1, 2, 3, 4, 5];
 arr4.splice(2, 2, 30, 40);
 
 console.log(arr4); // [1, 2, 30, 40, 5] */
+
+
+
+const marver_heros = [" thor "," ironman", "spiderman"]
+const dc_heros = ["superman", "flash","batman"]
+/*
+marver_heros.push(dc_heros);
+console.log(marver_heros);
+console.log(marver_heros[3][1]);
+*/
+ const allHeros = marver_heros.concat(dc_heros)
+ console.log(allHeros);
+
+ const all_new_heros = [...marver_heros,...dc_heros]
+ console.log(all_new_heros)
+
+ const another_array = [1,2,3,4,5,6,7,[0,9,8,7,6,5,[6,5,4]]]
+ const real_another_array = another_array.flat(Infinity);
+ console.log(real_another_array);
+
+ console.log(Array.isArray("pranjal"))
+ console.log(Array.from("pranjal"))
+ console.log(Array.from({name: " pranjal"}))
+
+ let score1 = 100
+ let score2 = 200
+ let score3 = 300
+
+ console.log(Array.of(score1,score2,score3));
+
+
+ // concat()
+// The concat() method joins two or more arrays and returns a new array.
+// It does NOT modify the original arrays.
+
+// Spread Operator (...)
+// The spread operator expands the elements of an array or object.
+// It is commonly used to merge or copy arrays and objects.
+
+// flat()
+// The flat() method creates a new array by flattening nested arrays.
+// You can specify the depth, or use Infinity to flatten all levels.
+
+// Array.isArray()
+// The Array.isArray() method checks whether a value is an array.
+// It returns true if the value is an array, otherwise false.
+
+// Array.from()
+// The Array.from() method creates a new array from an iterable or array-like object.
+// It can convert strings, Sets, Maps, etc., into arrays.
+
+// Array.of()
+// The Array.of() method creates a new array from the given arguments.
+// Each argument becomes an element of the new array.
+
+
