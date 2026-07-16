@@ -6,3 +6,5 @@ accountCity = "jaipur"
 
 console.log(account_Id)
 console.table([account_Id,account_Password,account_mail,accountCity])
+console.log(typeof 1444556);
+console.log(typeof "jaipur");

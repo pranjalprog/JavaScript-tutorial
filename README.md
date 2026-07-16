@@ -610,7 +610,530 @@ Output:
 Hello
 World
 ```
+# JavaScript String Prototype
+
+When you inspect a string in the browser console, you'll see its prototype (`[[Prototype]]`), which contains all the built-in methods available for strings.
+
+```javascript
+const name = "Pranjal";
+
+console.dir(name);
+```
+
+### Output (Simplified)
+
+```text
+"Pranjal"
+
+[[Prototype]]: String
+├── at()
+├── charAt()
+├── charCodeAt()
+├── codePointAt()
+├── concat()
+├── endsWith()
+├── includes()
+├── indexOf()
+├── lastIndexOf()
+├── localeCompare()
+├── match()
+├── matchAll()
+├── normalize()
+├── padEnd()
+├── padStart()
+├── repeat()
+├── replace()
+├── replaceAll()
+├── search()
+├── slice()
+├── split()
+├── startsWith()
+├── substr()
+├── substring()
+├── toLowerCase()
+├── toUpperCase()
+├── toLocaleLowerCase()
+├── toLocaleUpperCase()
+├── trim()
+├── trimStart()
+├── trimEnd()
+├── valueOf()
+├── toString()
+└── [Symbol.iterator]()
+
+[[PrimitiveValue]]: "Pranjal"
+```
+
+## What is `[[Prototype]]`?
+
+`[[Prototype]]` is the object from which another object inherits properties and methods.
+
+In the case of a string, all methods like `slice()`, `split()`, `trim()`, `toUpperCase()`, etc., come from `String.prototype`.
+
+```javascript
+const name = "Pranjal";
+
+console.log(name.toUpperCase()); // PRANJAL
+console.log(name.slice(0, 4));   // Pran
+console.log(name.includes("jan"));// true
+```
+
+## What is `[[PrimitiveValue]]`?
+
+`[[PrimitiveValue]]` is the actual value stored inside the string object.
+
+```text
+[[PrimitiveValue]]: "Pranjal"
+```
+
+This means the real string value is:
+
+```javascript
+"Pranjal"
+```
+
+---
+
+## Summary
+
+- `[[Prototype]]` → Contains all built-in String methods.
+- `String.prototype` → The object that provides methods like `slice()`, `trim()`, `split()`, etc.
+- `[[PrimitiveValue]]` → The actual string value (`"Pranjal"`).
+- JavaScript automatically wraps primitive strings with a temporary String object when you call a method on them.
 
 
+# JavaScript String Methods
+
+## at()
+
+**Definition:**
+The `at()` method returns the character at the specified index. It supports both positive and negative indexes.
+
+**Example:**
+```javascript
+const str = "Pranjal";
+console.log(str.at(-1)); // l
+```
+
+---
+
+## charAt()
+
+**Definition:**
+The `charAt()` method returns the character at a specified index. It only works with positive indexes.
+
+**Example:**
+```javascript
+const str = "Pranjal";
+console.log(str.charAt(2)); // a
+```
+
+---
+
+## charCodeAt()
+
+**Definition:**
+The `charCodeAt()` method returns the Unicode (UTF-16) value of the character at the specified index.
+
+**Example:**
+```javascript
+const str = "A";
+console.log(str.charCodeAt(0)); // 65
+```
+
+---
+
+## codePointAt()
+
+**Definition:**
+The `codePointAt()` method returns the Unicode code point of the character at the specified position. It correctly handles Unicode characters like emojis.
+
+**Example:**
+```javascript
+const str = "😊";
+console.log(str.codePointAt(0)); // 128522
+```
+
+---
+
+## concat()
+
+**Definition:**
+The `concat()` method joins two or more strings and returns a new string. It does not modify the original string.
+
+**Example:**
+```javascript
+const a = "Hello";
+console.log(a.concat(" World")); // Hello World
+```
+
+---
+
+## includes()
+
+**Definition:**
+The `includes()` method checks whether a string contains a specified value. It returns `true` or `false`.
+
+**Example:**
+```javascript
+const str = "JavaScript";
+console.log(str.includes("Script")); // true
+```
+
+---
+
+## indexOf()
+
+**Definition:**
+The `indexOf()` method returns the index of the first occurrence of a specified value. If not found, it returns `-1`.
+
+**Example:**
+```javascript
+const str = "banana";
+console.log(str.indexOf("a")); // 1
+```
+
+---
+
+## lastIndexOf()
+
+**Definition:**
+The `lastIndexOf()` method returns the index of the last occurrence of a specified value. If not found, it returns `-1`.
+
+**Example:**
+```javascript
+const str = "banana";
+console.log(str.lastIndexOf("a")); // 5
+```
+
+---
+
+## startsWith()
+
+**Definition:**
+The `startsWith()` method checks whether a string begins with the specified text. It returns `true` or `false`.
+
+**Example:**
+```javascript
+const str = "JavaScript";
+console.log(str.startsWith("Java")); // true
+```
+
+---
+
+## endsWith()
+
+**Definition:**
+The `endsWith()` method checks whether a string ends with the specified text. It returns `true` or `false`.
+
+**Example:**
+```javascript
+const str = "JavaScript";
+console.log(str.endsWith("Script")); // true
+```
+
+---
+
+## search()
+
+**Definition:**
+The `search()` method searches a string for a pattern or regular expression. It returns the index of the first match.
+
+**Example:**
+```javascript
+const str = "Hello World";
+console.log(str.search("World")); // 6
+```
+
+---
+
+## match()
+
+**Definition:**
+The `match()` method returns the result of matching a string against a regular expression. It returns an array or `null`.
+
+**Example:**
+```javascript
+const str = "abc123";
+console.log(str.match(/\d+/)); // ["123"]
+```
+
+---
+
+## matchAll()
+
+**Definition:**
+The `matchAll()` method returns an iterator containing all matches of a regular expression. It is useful for finding multiple matches.
+
+**Example:**
+```javascript
+const str = "cat bat rat";
+console.log([...str.matchAll(/at/g)]);
+```
+
+---
+
+## slice()
+
+**Definition:**
+The `slice()` method extracts a part of a string and returns it as a new string. It supports negative indexes.
+
+**Example:**
+```javascript
+const str = "JavaScript";
+console.log(str.slice(4, 10)); // Script
+```
+
+---
+
+## substring()
+
+**Definition:**
+The `substring()` method returns the part of a string between two indexes. Negative values are treated as `0`.
+
+**Example:**
+```javascript
+const str = "JavaScript";
+console.log(str.substring(4, 10)); // Script
+```
+
+---
+
+## substr() *(Deprecated)*
+
+**Definition:**
+The `substr()` method returns characters starting from a given index for a specified length. It is deprecated and should be avoided.
+
+**Example:**
+```javascript
+const str = "JavaScript";
+console.log(str.substr(4, 6)); // Script
+```
+
+---
+
+## replace()
+
+**Definition:**
+The `replace()` method replaces the first occurrence of a specified value with another value. It returns a new string.
+
+**Example:**
+```javascript
+const str = "Hello World";
+console.log(str.replace("World", "JS")); // Hello JS
+```
+
+---
+
+## replaceAll()
+
+**Definition:**
+The `replaceAll()` method replaces all occurrences of a specified value. It returns a new string.
+
+**Example:**
+```javascript
+const str = "cat cat cat";
+console.log(str.replaceAll("cat", "dog")); // dog dog dog
+```
+
+---
+
+## repeat()
+
+**Definition:**
+The `repeat()` method creates a new string by repeating the original string a specified number of times.
+
+**Example:**
+```javascript
+console.log("Hi ".repeat(3)); // Hi Hi Hi
+```
+
+---
+
+## padStart()
+
+**Definition:**
+The `padStart()` method pads the beginning of a string until it reaches the desired length.
+
+**Example:**
+```javascript
+console.log("5".padStart(3, "0")); // 005
+```
+
+---
+
+## padEnd()
+
+**Definition:**
+The `padEnd()` method pads the end of a string until it reaches the desired length.
+
+**Example:**
+```javascript
+console.log("5".padEnd(3, "0")); // 500
+```
+
+---
+
+## trim()
+
+**Definition:**
+The `trim()` method removes whitespace from both the beginning and end of a string.
+
+**Example:**
+```javascript
+console.log("  Hello  ".trim()); // Hello
+```
+
+---
+
+## trimStart()
+
+**Definition:**
+The `trimStart()` method removes whitespace only from the beginning of a string.
+
+**Example:**
+```javascript
+console.log("   Hello".trimStart()); // Hello
+```
+
+---
+
+## trimEnd()
+
+**Definition:**
+The `trimEnd()` method removes whitespace only from the end of a string.
+
+**Example:**
+```javascript
+console.log("Hello   ".trimEnd()); // Hello
+```
+
+---
+
+## toLowerCase()
+
+**Definition:**
+The `toLowerCase()` method converts all characters in a string to lowercase.
+
+**Example:**
+```javascript
+console.log("HELLO".toLowerCase()); // hello
+```
+
+---
+
+## toUpperCase()
+
+**Definition:**
+The `toUpperCase()` method converts all characters in a string to uppercase.
+
+**Example:**
+```javascript
+console.log("hello".toUpperCase()); // HELLO
+```
+
+---
+
+## toLocaleLowerCase()
+
+**Definition:**
+The `toLocaleLowerCase()` method converts a string to lowercase using locale-specific rules.
+
+**Example:**
+```javascript
+console.log("HELLO".toLocaleLowerCase()); // hello
+```
+
+---
+
+## toLocaleUpperCase()
+
+**Definition:**
+The `toLocaleUpperCase()` method converts a string to uppercase using locale-specific rules.
+
+**Example:**
+```javascript
+console.log("hello".toLocaleUpperCase()); // HELLO
+```
+
+---
+
+## split()
+
+**Definition:**
+The `split()` method divides a string into an array using a specified separator.
+
+**Example:**
+```javascript
+const str = "HTML,CSS,JS";
+console.log(str.split(",")); // ["HTML", "CSS", "JS"]
+```
+
+---
+
+## normalize()
+
+**Definition:**
+The `normalize()` method returns the Unicode normalized form of a string. It helps compare visually identical Unicode characters.
+
+**Example:**
+```javascript
+console.log("é".normalize());
+```
+
+---
+
+## localeCompare()
+
+**Definition:**
+The `localeCompare()` method compares two strings according to the current locale. It returns `-1`, `0`, or `1`.
+
+**Example:**
+```javascript
+console.log("apple".localeCompare("banana")); // -1
+```
+
+---
+
+## toString()
+
+**Definition:**
+The `toString()` method returns the string representation of a String object.
+
+**Example:**
+```javascript
+const str = new String("Hello");
+console.log(str.toString()); // Hello
+```
+
+---
+
+## valueOf()
+
+**Definition:**
+The `valueOf()` method returns the primitive value of a String object.
+
+**Example:**
+```javascript
+const str = new String("Hello");
+console.log(str.valueOf()); // Hello
+```
+
+---
+
+## [Symbol.iterator]
+
+**Definition:**
+The `[Symbol.iterator]()` method returns an iterator that allows you to loop through each character of a string.
+
+**Example:**
+```javascript
+for (const ch of "JS") {
+  console.log(ch);
+}
+
+// J
+// S
+```
 
 
