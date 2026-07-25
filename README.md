@@ -1135,5 +1135,5 @@ for (const ch of "JS") {
 // J
 // S
 ```
-
+node command invokes the Node.js runtime to execute a JavaScript file in a non-browser (server-side) environment.
 
