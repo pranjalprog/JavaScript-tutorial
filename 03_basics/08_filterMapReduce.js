@@ -77,5 +77,41 @@ filter() → Keep only matching items.
 reduce() → Combine everything into one result (sum, count, object, etc.).
 
 
- 
+
+
+
+Chaining means calling multiple methods one after another because each method returns a value that the next method can use.
+
+Syntax
+object.method1().method2().method3();
+Example with Arrays
+let nums = [1, 2, 3, 4, 5];
+
+let result = nums
+  .filter(n => n % 2 === 0)
+  .map(n => n * 10)
+  .reduce((sum, n) => sum + n, 0);
+
+console.log(result); // 60
+How it works
+filter() → Keeps even numbers → [2, 4]
+map() → Multiplies each by 10 → [20, 40]
+reduce() → Adds them → 60
+Why use chaining?
+Makes code shorter and cleaner.
+Avoids creating unnecessary temporary variables.
+Improves readability by showing the data flow step by step.
+Without Chaining
+let even = nums.filter(n => n % 2 === 0);
+let multiplied = even.map(n => n * 10);
+let result = multiplied.reduce((sum, n) => sum + n, 0);
+With Chaining
+let result = nums
+  .filter(n => n % 2 === 0)
+  .map(n => n * 10)
+  .reduce((sum, n) => sum + n, 0);
+
+Easy definition:
+Method chaining is the process of calling multiple methods in a single statement, where the output of one method becomes the input for the next.
+
 */

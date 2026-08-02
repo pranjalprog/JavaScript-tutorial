@@ -1,0 +1,95 @@
+ <!-- DOM -> Document object model- jitna bhi apne webpage likha , means document likha h usme jo object hai jaise head , body etc
+ /*Document
+│
+└── HTML
+    ├── HEAD
+    │   ├── title
+    │   │   └── Text Node
+    │   │
+    │   └── meta
+    │       └── Attribute
+    │
+    └── BODY
+        └── div (Attribute)
+            ├── h1 (Attribute)
+            │   └── Text Node
+            │
+            └── p
+                └── Text Node
+
+
+
+
+| Property      | Kya Return Karta Hai    | HTML Tags             | Hidden Text         |
+| ------------- | ----------------------- | --------------------- | ------------------- |
+| `textContent` | Sirf text               | ❌ Remove kar deta hai | ✅ Include karta hai |
+| `innerText`   | Screen par visible text | ❌ Remove kar deta hai | ❌ Ignore karta hai  |
+| `innerHTML`   | Pura HTML content       | ✅ Include karta hai   | HTML ke saath       |
+
+
+
+
+
+
+NodeList is a collection (list) of DOM nodes returned by methods like querySelectorAll().
+
+Example
+<p>One</p>
+<p>Two</p>
+<p>Three</p>
+let paras = document.querySelectorAll("p");
+
+console.log(paras);
+
+Output:
+
+NodeList(3) [p, p, p]
+Access Elements
+console.log(paras[0]); // First <p>
+console.log(paras[1]); // Second <p>
+Loop Through NodeList
+paras.forEach((p) => {
+    console.log(p.textContent);
+});
+
+Output:
+
+One
+Two
+Three
+Difference: NodeList vs HTMLCollection
+NodeList	HTMLCollection
+Returned by querySelectorAll()	Returned by getElementsByClassName(), getElementsByTagName()
+Can use forEach()	Cannot use forEach() directly
+Usually static	Usually live (updates automatically)
+Easy Definition
+
+NodeList = A list of DOM nodes (elements) returned by methods like querySelectorAll(), which you can access by index and iterate using forEach().
+-->
+
+
+  
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+       .bg-black{
+        background-color: hsla(60, 9%, 4%, 0);
+        color: #ea660e
+    }
+    </style>
+ </head>
+ <body class="bg-black">
+    <div >
+    <h1 id ="title" class="heading">DOM learning on Pranjal channel and class <span style ="display: none;">test text</span></h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+ </body>
+ </html>  
+
+
+
+
+
