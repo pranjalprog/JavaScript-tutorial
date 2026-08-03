@@ -112,6 +112,25 @@ let result = nums
   .reduce((sum, n) => sum + n, 0);
 
 Easy definition:
-Method chaining is the process of calling multiple methods in a single statement, where the output of one method becomes the input for the next.
+Method chaining is the process of calling multiple methods in a single statement, where the output of one method becomes the input for the next. 
 
 */
+
+const myArr = [1,2,3,4,5,6,7,8,9,10]
+
+
+// const newArr = myArr.map((nums) => nums + 10)
+/*const newArr = myArr 
+                  .map((nums) => nums * 10)
+                  .map((nums) => nums + 10)
+                  .filter((nums) => nums >= 10) 
+console.log(newArr);
+*/
+
+const redArr = myArr.reduce(function (acc, currval) {
+    console.log(`acc  is ${acc} and currVal is ${currval}`)
+    return acc + currval
+}, 3)
+
+console.log(redArr);
+

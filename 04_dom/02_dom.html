@@ -1,0 +1,68 @@
+<!--
+
+querySelector() and querySelectorAll() are JavaScript DOM methods used to select HTML elements using CSS selectors.
+
+querySelector()
+Returns only the first matching element.
+Returns null if no element matches.
+Syntax - document.querySelector("selector");
+
+querySelectorAll()
+Returns all matching elements.
+Returns a NodeList (not an array).
+If no elements match, it returns an empty NodeList.
+
+Syntax - document.querySelectorAll("selector");
+
+
+In the DOM, NodeList and HTMLCollection are array-like collections of DOM elements, but they have important differences.
+
+NodeList
+A collection of nodes returned by methods like querySelectorAll().
+Can contain elements and, in some cases, other node types (such as text nodes).
+Supports forEach() directly.
+
+
+HTMLCollection
+A collection of HTML elements only.
+Returned by methods like:
+getElementsByClassName()
+getElementsByTagName()
+children
+Does not have a forEach() method.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Pranjal Jain</title>
+</head>
+<body style="background-color: rgb(204, 142, 61); color:rgb(122, 8, 8)">
+    <div class = "parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">WednesDay</div>
+        <div class="day">Thursday</div>
+        </div>  
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
+for(let i = 0; i<parent.children.length; i++){
+    console.log(parent.children[i].innerHTML);
+}
+parent.children[1].style.color ="black"
+console.log(parent.firstElementChild);
+console.log(parent.lastElementChild);
+
+const dayOne = document.querySelector('.day')
+console.log(dayOne.parentElement);
+console.log("NODES: ", parent.childNodes)
+
+
+</script>
+</html>
